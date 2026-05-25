@@ -1,0 +1,9 @@
+{
+  "name": "Comcast",
+  "version": "1.0.0",
+  "description": "Simple static HTML site",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo 'No server needed for static HTML'"
+  }
+}
